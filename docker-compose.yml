@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: food_app_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - mern_network
+
+  backend:
+    build: ./backend
+    container_name: food_app_backend
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - MONGO_URI=mongodb://mongodb:27017/food-delivery
+      - JWT_SECRET=${JWT_SECRET}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+    depends_on:
+      - mongodb
+    networks:
+      - mern_network
+
+  frontend:
+    build: ./frontend
+    container_name: food_app_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - mern_network
+
+  admin:
+    build: ./admin
+    container_name: food_app_admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - mern_network
+
+volumes:
+  mongo_data:
+
+networks:
+  mern_network:
+    driver: bridge
