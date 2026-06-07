@@ -1,6 +1,8 @@
 # 🚚 Food Ordering Web App (MERN Stack)
 <img width="1920" height="1080" alt="Screenshot from 2026-06-07 22-29-46" src="https://github.com/user-attachments/assets/108c62d0-c8e5-4860-b176-367d751ecbd6" />
 <img width="1920" height="1080" alt="Screenshot from 2026-06-07 22-29-46" src="https://github.com/user-attachments/assets/43235dd8-20f1-42fb-b1f9-545e25d1108e" />
+<img width="725" height="212" alt="Screenshot from 2026-06-07 22-29-59" src="https://github.com/user-attachments/assets/29ec2fa2-c5f3-4a65-929c-02c75553bd31" />
+
 
 ## ✨ Table of Contents
 - [Introduction](#introduction)
